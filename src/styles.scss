@@ -1,0 +1,21 @@
+@import "~node_modules/ag-grid-community/styles/ag-grid.css";
+@import "~node_modules/ag-grid-community/styles/ag-theme-balham.css";
+@import "~node_modules/ag-grid-community/styles/ag-theme-material.css";
+
+
+  .ag-root-wrapper-body.ag-layout-normal {
+    height: auto;
+}
+.ag-theme-alpine {
+    .ag-header-cell {
+        border-right: 1px solid ag-param(secondary-border-color) !important;
+    }
+}
+
+.ag-theme-balham .ag-ltr .ag-cell {
+    border-right: 1px solid rgb(228, 225, 225) !important;
+}
+.ag-root-wrapper {
+    border: solid 1px;
+    border-color: var(--ag-border-color, #babfc7) !important;
+}

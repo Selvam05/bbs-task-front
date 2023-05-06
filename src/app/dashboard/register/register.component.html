@@ -1,0 +1,79 @@
+<div class="container-fluid">
+    <form [formGroup]="regForm" (ngSubmit)="onRegClick($event, regForm)">
+        <div class="loginContainer ">
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <h3 class="title">Register</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label>Name</label>
+                    <input class="form-control" type="name" formControlName="name"
+                        [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                        <div *ngIf="f.name.errors.required">Name is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label for="inputEmail4">Email</label>
+                    <input class="form-control" name="email" type="email" id="email" formControlName="email"
+                        [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label for="inputEmail4">Password</label>
+                    <input class="form-control" name="password" type="password" id="password" #password1
+                        formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                    <div class="input-icon" (click)="changeType(password1, 1)">
+                        <span class="input-icon">
+                            <i [ngClass]="toggle1 ? 'far fa-eye-slash' : 'far fa-eye'"></i></span>
+                    </div>
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <label for="inputEmail4">Gender</label>
+            <div class="row" style="margin-left:5px">
+                <input type="radio" name="gender" id="exampleRadios1" value="male" checked formControlName="gender">
+                <label>
+                    Male
+                </label>
+                <input type="radio" name="gender" id="exampleRadios1" value="female" style="margin-left:40%"
+                    formControlName="gender">
+                <label>
+                    Female
+                </label>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label for="">Category</label>
+                    <select class="select form-control-arrow form-control" formControlName="category" required>
+                        <option [value]=null> Select Department </option>
+                        <option value="general">General</option>
+                    </select>
+                    <div *ngIf="submitted && f.category.errors" class="invalid-feedback">
+                        <div *ngIf="f.category.errors.required">
+                            category is Required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

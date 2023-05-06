@@ -1,0 +1,19 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+}
+
+
+.input-icon{
+  float: right;
+  margin-top: -17px;
+  position: relative;
+  z-index: 1;
+  cursor:pointer;
+}
+.loginContainer{
+  box-shadow: 10px 10px 10px 10px #888888;
+  margin: 24% !important;
+  padding: 26px;
+  margin-top: 112px !important;
+}

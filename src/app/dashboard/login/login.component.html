@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <form [formGroup]="loginForm" (ngSubmit)="onLoginClick($event, loginForm)">
+        <div class="loginContainer ">
+            <div class="row">
+                <div class="form-group col-md-12 col-lg-12 col-sx-12">
+                    <h3 class="title">Login</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label for="inputEmail4">Email</label>
+                    <input class="form-control" name="email" type="email" id="email" formControlName="email"
+                        [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label for="inputEmail4">Password</label>
+                    <input class="form-control" name="password" type="password" id="password" #password1
+                        formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                    <div class="input-icon" (click)="changeType(password1, 1)">
+                        <span class="input-icon">
+                            <i [ngClass]="toggle1 ? 'far fa-eye-slash' : 'far fa-eye'"></i></span>
+                    </div>
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
